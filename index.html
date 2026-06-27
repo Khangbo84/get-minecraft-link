@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <title>Get minecraft link</title>
+  </head>
+  <style>
+  body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(135deg, #09090f, #1a1a2f, #29294f, #3b2a63, #1e1e2d);
+      background-size: 300% 300%;
+      animation: bgFlow 10s ease-in-out infinite alternate;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    @keyframes bgFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 { text-align: center; font-size: 26px; margin-bottom: 6px; font-weight: 700; }
+    .meta { text-align: center; color: rgba(255,255,255,0.85); margin-bottom: 14px; font-size: 15px; }
+    button { background: linear-gradient(90deg, #42a5f5, #5c6bc0); color: white; border: none; padding: 12px 20px; border-radius: 10px; cursor: pointer; font-size: 16px; margin-top: 12px; transition: transform 0.18s, box-shadow 0.18s; font-weight: 700; }
+  </style>
+  <body>
+    <h1>Lấy link download Minecraft nhanh chóng!</h1>
+<input id="url">
+
+<button onclick="getLink()">
+Lấy link
+</button>
+
+<p id="result"></p>
+  </body>
+<script>
+async function getLink(){
+
+    const url=document.getElementById("url").value;
+
+    const res=await fetch(
+        "https://YOUR-WORKER.workers.dev/?url="
+        +encodeURIComponent(url)
+    );
+
+    const json=await res.json();
+
+    document.getElementById("result").innerHTML=
+    `<a href="${json.download}">
+        ${json.download}
+    </a>`;
+}
+</script>
