@@ -112,10 +112,68 @@ button{
     flex:1;
 
   }
+p{
+  font-size:20px;
+}
+.version{
+  opacity:0.6;
+  color: white;
+  font-size:13px;
+}
+  .vi{
     
+    margin-top:12px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background: linear-gradient(90deg, #ff0000, #ff9900, #ffd700, #ff0000, #ff9900); 
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+  }
+    .en{
+      
+    margin-top:12px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background: linear-gradient(90deg, #42a5f5, #5c6bc0);
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:bold;
+    }
   </style>
   <body>
     <div class="container">
+      <h1>Choose your language</h1>
+      <div class="lang">
+      <button class="vi" onclick="viLang()">Vietnamese</button>
+      <button class="en" onclick="enLang()">English</button>
+      </div>
+    </div>
+    <div class="container">
+      <h1>How to use</h1>
+      <h3>English</h3>
+      <p>1.Copy URL in website</p>
+      <p>2.Paste the link below.</p>
+      <p>3.Click "Get link"</p>
+      <p>4.Copy the link and paste it into your browser's search bar.</p>
+    </div>
+      <div class="container">
 
     <h1>📥 MCPEDL Direct Link</h1>
 
@@ -123,16 +181,16 @@ button{
         id="url"
         placeholder="https://mcpedl.org/getfile/7255">
 
-    <button onclick="getLink()">Lấy link</button>
+    <button onclick="getLink()">Get Link</button>
 
     <div id="container">
 
-        <h3>Kết quả</h3>
+        <h3>Result</h3>
 
         <div id="result"></div>
 
         <div class="btn-group">
-            <button onclick="cpLink()">📋 Copy</button>
+            <button onclick="cpLink()">Copy</button>
 
             <a id="download" target="_blank">
                 <button>⬇ Download</button>
@@ -141,6 +199,13 @@ button{
 
     </div>
 
+    </div>
+    <div class="container">
+    <h1>Credit</h1>
+      <p>Khangbo84</p>
+    <div class="version">
+      <p>version 1.0.0</p>
+    </div>
     </div>
   </body>
 <script>
@@ -172,3 +237,4 @@ document.getElementById("download").href=json.download;
   }
     
 </script>
+</html>
